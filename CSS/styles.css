@@ -27,6 +27,18 @@ html, body{
 	border: solid 1px #444;
 	border-radius: 2px;
 }
+a{
+	color: green;
+}
+header nav{
+	float: right;
+	margin-right: 5px;
+}
+header nav li{
+	display: inline;
+	font-size: 12px;
+
+}
 #main{
 	border: solid 2px #ccc;
 	border-radius: 5px;
@@ -35,9 +47,27 @@ html, body{
 	margin : 20px 0; /*top bottom 20 and right left 0*/
 	padding: 5px;
 }
+
+#result{
+	padding: 2px;
+	width: 600px;
+	display: inline-block;
+	vertical-align: top;
+	/* width: 700px; */
+	
+
+}
+/* #resultsList{
+	padding: 2px;
+	width: 600px;
+	display: inline-block;
+	vertical-align: top;
+} */
 .simple-form{
 	padding: 5px;
 	width: 300px;
+	display: inline-block;
+	vertical-align: top;
 	/*position: static; please use me as the hirerachy(order) of the tags*/
 	/* position: fixed;  */
 	/* position: absolute;

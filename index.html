@@ -11,12 +11,6 @@
 <body>
 	<div class="container">
 		<header>
-			<div>
-				<img src="Images/beach.jpg" style="height: auto; width: 100px;" class="bordered-image" />
-			</div><!-- <h1>Lorem Ipsum</h1> -->
-			<div>
-				<p>Dolore <em>occaecat ut voluptate</em> voluptate <strong>aliquip labore</strong></p>
-			</div>
 			<nav>
 				<ul>
 				<li><a href="#">Home</a></li>
@@ -24,14 +18,23 @@
 				<li><a href="#">About</a></li>
 				</ul>
 			</nav>
+			<div>
+				<img src="Images/beach.jpg" style="height: auto; width: 100px;" class="bordered-image" />
+			</div><!-- <h1>Lorem Ipsum</h1> -->
+			<div>
+				<p>Dolore <em>occaecat ut voluptate</em> voluptate <strong>aliquip labore</strong></p>
+			</div>
+			
 		</header>
 			<section id="main">
 				<p>in excepteur <b>et enim veniam</b> est <a href="http://github.com">Github</a></p>
 				<form action="http://wilder.azurewebsites.net/echo" method="POST" class="bordered-image simple-form">
 					<label for="searchPhrase">Search Phase:</label>
-					<input type="text" name="searchPhrase" id="searchPhrase"/><br>
+					<input type="text" name="searchPhrase" id="searchPhrase"/>
+					<br>
 					<input type="checkbox" name="usesatars" checked="true" />
-					<label for="usesatars">UseStars?</label><br>
+					<label for="usesatars">UseStars?</label>
+					<br>
 					<label for="langChoice">Languages: </label>
 					<select name="langChoice" id="langChoice">
 						<option>All</option>
@@ -43,6 +46,10 @@
 					<br />
 					<input type="submit" vlaue="search">
 				</form>
+				<div id="result" class="bordered-image">
+					<button id="toggleButton" value=>Hide</button>
+				<div id="resultsList">This is where results will libe...eventually.</div>
+			</div>
 			</section>
 			<section>
 				<p>fugiat voluptate voluptate <em>voluptate voluptate voluptate</em> voluptate occaecat ut voluptate occaecat ut <span>voluptate occaecat ut voluptate.</span></p>
@@ -51,5 +58,7 @@
 				&copy; 2018 Akanksha Mohanty SG &#x160; ;
 		</footer>
 	</div>
+	<script type="text/javascript" src="JS/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="JS/index.js"></script>
 </body>
 </html>
