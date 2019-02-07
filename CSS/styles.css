@@ -90,3 +90,10 @@ header nav li{
 	margin: 5px 0;
 	padding: 5px; 
 }
+.result{
+	margin : 5px;
+	border :  solid 2px #ccc;
+}
+.result .title{
+	font-weight: bold;
+}

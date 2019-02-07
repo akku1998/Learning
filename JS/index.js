@@ -21,6 +21,11 @@ $(document).ready(function(){
 		else toggleButton.text("Hide");
 
 	});
+	// $("header nav li").text("jQuery test");
+	//$("header nav li").css("font-weight" , "bold");
+	var ListItems = $("header nav li");
+	ListItems.css("font-weight", "bold");
+	ListItems.css("font-size" , "14px");
 
 	// var result = {
 	// 	name : "jquery", /* these are properties */
@@ -40,38 +45,75 @@ $(document).ready(function(){
 	// result.phoneNumber = "123-456-789";
 	// console.log(result.phoneNumber);
 
-	// var results = [{
-	// 	name : "jquery I", /* these are properties */
-	// 	language : "Javascript",
-	// 	score : 3.5, function() {  a property can be a function 
 
-	// 	},
-	// 	owner: {
-	// 		login: "akankshamohanty",
-	// 		id: 123456
-	// 		}
-	// 	}, {
-	// 	name : "jquery S", /* these are properties */
-	// 	language : "Javascript",
-	// 	score : 4.5, function() { /* a property can be a function */
 
-	// 	},
-	// 	owner: {
-	// 		login: "akankshamohanty",
-	// 		id: 123456
-	// 	}
-	// },  {
-	// 	name : "jquery UI", /* these are properties */
-	// 	language : "Javascript",
-	// 	score : 4.5, function() { /* a property can be a function */
+	$("#gitHubSearch").on("submit", function() {
 
-	// 	},
-	// 	owner: {
-	// 		login: "akankshamohanty",
-	// 		id: 123456
-	// 	}
+		var gitHubSearch = "https://api.github.com/search/repositories?q=jquery+language:javascript&sort=stars";
+			$.get(gitHubSearch)
+			.success(function(r){
+				displayResults(r.items);
+			})
+			.fail(function(err){
+				console.log("Failed to query Github");
+			})
+			.done(function(){
 
-	// }];
+			});
+			return false;
+	});
+
+	var results = [{
+		name : "jquery I", /* these are properties */
+		language : "Javascript",
+		score : 3.5, function() {  /*a property can be a function*/ 
+
+		},
+		owner: {
+			login: "akankshamohanty",
+			id: 123456
+			}
+		}, {
+		name : "jquery S", /* these are properties */
+		language : "Javascript",
+		score : 4.5, function() { /* a property can be a function */
+
+		},
+		owner: {
+			login: "akankshamohanty",
+			id: 123456
+		}
+	},  {
+		name : "jquery UI", /* these are properties */
+		language : "Javascript",
+		score : 4.5, function() { /* a property can be a function */
+
+		},
+		owner: {
+			login: "akankshamohanty",
+			id: 123456
+		}
+
+	}];
+	resultsList.empty();
+		$.each(results, function(i, item) {
+
+			var newResult = $("<div class='result'>" +
+			"<div class='title'>" +  item.name + "</div>" +
+			"<div>Language: " + item.language + "</div>" +
+			"<div>Owner: " + item.owner.login + "</div>" + 
+			"</div>");
+
+			newResult.hover(function() {
+				//make it darker
+				$(this).css("background-color", "lightgray");
+			}, function() {
+				//reverse
+				$(this).css("background-color", "transparent");
+			});
+
+			resultsList.append(newResult); /* appen() - Inserts content at the end of the selected elements */
+		});
 
 	// console.log(results.length);
 	// console.log(results[0].name, results[1].name);
@@ -149,3 +191,4 @@ $(document).ready(function(){
 	}
 	testMe();
 	/*console.log("global:" + someMsg);*/
+});
